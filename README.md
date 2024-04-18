@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokédex - Aplicação para Catalogar e Capturar Pokémon
 
-## Getting Started
+O Pokédex é um aplicativo web desenvolvido utilizando Next.js e Redux, projetado para fornecer uma experiência completa de catalogação e captura de Pokémon. A aplicação consome a API do pokeapi.co para obter dados detalhados sobre os Pokémon.
 
-First, run the development server:
+## Recursos Principais
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Catalogação Completa de Pokémon:**
+Visualize uma lista completa de Pokémon, incluindo detalhes como nome, imagem, tipo, habilidades, estatísticas e evoluções.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Captura de Pokémon:**
+Capture seus Pokémon favoritos com apenas um clique na Pokébola mágica. Os Pokémon capturados são salvos automaticamente utilizando Redux e localStorage.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Navegação nas Evoluções:**
+Explore as evoluções de cada Pokémon, navegando facilmente entre as diferentes formas.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Persistência de Dados:**
+A lista de Pokémon capturados é persistente, permitindo que você acesse seus Pokémon favoritos a qualquer momento, mesmo após fechar o aplicativo ou trocar de dispositivo.
 
-## Learn More
+## Preview de telas
 
-To learn more about Next.js, take a look at the following resources:
+![ Home](https://raw.githubusercontent.com/Anderson-Dias-Farias/pokedex/main/public/telas/pokedexHome.PNG)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![ Dados Pokemon](https://raw.githubusercontent.com/Anderson-Dias-Farias/pokedex/main/public/telas/dadosPokemon.PNG)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![ Capturados](https://raw.githubusercontent.com/Anderson-Dias-Farias/pokedex/main/public/telas/pokedexFavoritos.PNG)
 
-## Deploy on Vercel
+## Stack utilizada
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Front-end:** TypeScript, NextJs, React, Redux, TailwindCSS.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+🎲 Rodando o Front End
+
+**Clone este repositório**
+
+$ git clone https://github.com/Anderson-Dias-Farias/pokedex
+
+**entre na pasta**
+
+$ cd teste-react-pleno/
+
+**instale as dependências**
+$ npm install
+
+**Execute a aplicação em modo de desenvolvimento.**
+
+$ npm run dev
+
+**O servidor inciará na porta:3000**
+
+- acesse <http://localhost:3000>
+
+### Links importantes
+
+- [Pokédex](https://pokedex-six-alpha-88.vercel.app/)
