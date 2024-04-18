@@ -36,7 +36,7 @@ $ git clone https://github.com/Anderson-Dias-Farias/pokedex
 
 **entre na pasta**
 
-$ cd teste-react-pleno/
+$ cd pokedex/
 
 **instale as dependências**
 $ npm install
