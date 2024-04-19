@@ -3,6 +3,7 @@ import Dialogs from "@/components/PokemonList/pokemonCard/Dialogs";
 import { addBusca } from "@/components/Store/pokemonSlice/pokemonSlice";
 import { useAppDispatch } from "@/components/Store/pokemonSlice/useTypedSelector";
 import {
+  remPokemonM,
   returnCorAtual,
   returnIcons,
   returnType,
@@ -11,6 +12,7 @@ import { PokemonRoot } from "@/components/Utils/interface";
 import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
+
 import Buscar from "../../../../public/lupa.png";
 
 function BuscaPokemon() {
@@ -20,21 +22,25 @@ function BuscaPokemon() {
   const dispatch = useAppDispatch();
 
   const BuscaPokemon = async () => {
-    await axios
-      .get(
-        `https://pokeapi.co/api/v2/pokemon/${busca
-          .toLowerCase()
-          .trimEnd()
-          .replaceAll(" ", "-")}`
-      )
-      .then((res) => {
-        if (res.data?.stats) {
-          dispatch(addBusca(res.data));
-          setRetornoBusca(res.data);
-          setOpen(true);
-        }
-      })
-      .catch(() => alert(busca.replaceAll(" ", "-")));
+    if (busca != "") {
+      await axios
+        .get(
+          `https://pokeapi.co/api/v2/pokemon/${busca
+            .toLowerCase()
+            .trimEnd()
+            .replaceAll(" ", "-")}`
+        )
+        .then((res) => {
+          if (res.data?.stats) {
+            dispatch(addBusca(res.data));
+            setRetornoBusca(res.data);
+            setOpen(true);
+          }
+        })
+        .catch(() => remPokemonM("Pokémon não encontrado"));
+    } else {
+      remPokemonM("Digite o nome do Pokémon");
+    }
   };
 
   const type = returnType(restornoBusca);

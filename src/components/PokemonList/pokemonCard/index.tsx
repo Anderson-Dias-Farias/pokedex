@@ -2,6 +2,8 @@
 import { addFavorito } from "@/components/Store/pokemonSlice/pokemonSlice";
 import { useAppDispatch } from "@/components/Store/pokemonSlice/useTypedSelector";
 import {
+  addPokemonM,
+  remPokemonM,
   returnCorAtual,
   returnIcons,
   returnType,
@@ -64,6 +66,11 @@ function PokemonCard({ pokemon }: Props) {
   const CapturarPokemon = () => {
     dispatch(addFavorito({ action: pokemon, ts: !capturado }));
     setCapturado(!capturado);
+    if (capturado == false || capturado == undefined || capturado == null) {
+      addPokemonM("Pokémon capturado");
+    } else {
+      remPokemonM("Pokémon solto");
+    }
   };
 
   return (

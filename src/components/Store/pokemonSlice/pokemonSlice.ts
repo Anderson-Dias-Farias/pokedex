@@ -59,7 +59,7 @@ const pokemonSlice = createSlice({
       p.favorit = action.payload.ts
     }
   })
-    
+  state
   const favoritos = state.pk.filter((pokemon) => pokemon.favorit === true);
 
   

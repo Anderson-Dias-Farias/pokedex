@@ -10,7 +10,7 @@ function Header() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   return (
-    <div className="w-full h-16 bg-red-600 flex items-center justify-center fixed z-50 shadow-lg">
+    <div className="w-full h-16 bg-red-600 flex items-center justify-center fixed z-20 shadow-lg">
       <div className="w-full max-w-7xl flex items-center justify-between px-2">
         <div
           className="flex items-center justify-start gap-2 relative w-auto md:w-32 cursor-pointer"

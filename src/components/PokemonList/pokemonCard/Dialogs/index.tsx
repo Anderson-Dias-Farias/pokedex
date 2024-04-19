@@ -3,7 +3,11 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "@/components/Store/pokemonSlice/useTypedSelector";
-import { returnCorAtual } from "@/components/Utils/function";
+import {
+  addPokemonM,
+  remPokemonM,
+  returnCorAtual,
+} from "@/components/Utils/function";
 import { PokemonRoot } from "@/components/Utils/interface";
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
@@ -49,6 +53,11 @@ export default function Dialogs({
   const CapturarPokemon = () => {
     dispatch(addFavorito({ action: pokemon, ts: !capturado }));
     setCapturado(!capturado);
+    if (capturado == false || capturado == undefined || capturado == null) {
+      addPokemonM("Pokémon capturado");
+    } else {
+      remPokemonM("Pokémon solto");
+    }
   };
 
   const cancelButtonRef = useRef(null);
